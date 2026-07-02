@@ -49,7 +49,7 @@ Record checked: true
 | JSONL record | `examples/reports/public-replay-record.jsonl` |
 | Trusted Output v0 wrapper | `examples/reports/public-replay-trusted-output.json` |
 
-Current Trusted Output status:
+Current Trusted Output verification status:
 
 ```text
 schema_version: aos-trusted-output/v0

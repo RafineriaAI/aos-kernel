@@ -50,7 +50,7 @@ aos trust verify \
   --record examples/reports/public-replay-record.jsonl
 ```
 
-Expected trust status:
+Expected verification status:
 
 ```text
 Status: UNSIGNED_NOT_OFFICIAL
@@ -93,7 +93,7 @@ For one bounded workflow artifact, record:
 | finding or signal count | review size |
 | record SHA-256 availability | integrity anchor |
 | replay success | reproducibility |
-| trust status | whether the output is official, unsigned, or tampered |
+| verification status | whether the output is official, unsigned, or tampered |
 | operator notes | practical fit and false-review pressure |
 
 ## Current Public Proof

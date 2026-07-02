@@ -64,7 +64,7 @@ aos trust verify \
   --record .tmp/aos-demo/check-record.jsonl
 ```
 
-Current public trust status:
+Current public verification status:
 
 ```text
 signature_status: UNSIGNED_NOT_OFFICIAL

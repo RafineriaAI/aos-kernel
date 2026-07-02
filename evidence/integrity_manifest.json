@@ -44,7 +44,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "7764deaad4e2406122bacf62d7b780317033435899df26702c56eaa5c12addfb"
+      "sha256": "3876eee92ae95f3670a36437449f4adda8e1a43b99280b5fcdf9b0100be128b2"
     },
     {
       "path": "SCOPE_OF_PROOF.md",
@@ -100,7 +100,7 @@
     },
     {
       "path": "docs/PROOF_OF_VALUE.md",
-      "sha256": "8cb7041afcb6c5e95ad9e334efd2f71ea4032132ce60c53ead7ab39facdb8231"
+      "sha256": "eed10abb01e41818d69a00aed5f528288cba8d8674da4305a6e10551a8676d8e"
     },
     {
       "path": "docs/PUBLIC_BOUNDARY.md",
@@ -116,7 +116,7 @@
     },
     {
       "path": "docs/case-studies/public-repo-replay.md",
-      "sha256": "7a68ad4d334937c2c78201cf6c8963b83aa7ffaddeb4c31bce63ae512b81a72a"
+      "sha256": "8febdbb48da125a0c6e3f18f97565eb16f59b5060e9b1f42e0209e89c156f349"
     },
     {
       "path": "examples/reports/public-replay-record.jsonl",
