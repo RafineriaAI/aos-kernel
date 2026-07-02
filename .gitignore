@@ -1,0 +1,76 @@
+.lake/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.pip-audit-cache/
+.tmp/
+.tmp-pip-local/
+.aos-tmp/
+external-assurance/
+evidence/aos_validation.sarif
+.venv-audit/
+.venv-security/
+__aos_shadow_test_*.sqlite3*
+*.py[cod]
+.venv/
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+public_release_exports/
+
+# Local experimental scratch surfaces are not part of the public demonstrator.
+examples/lean-interval-check/
+
+# Local public-dataset diagnostic runs are generated working artifacts, not
+# committed demonstrator evidence.
+benchmarks/results/frozen_outputs.jsonl
+benchmarks/results/*_controlled_study_manifest.json
+benchmarks/results/*_controlled_study_metrics.json
+benchmarks/results/*_controlled_study_summary.md
+benchmarks/results/ragtruth_*.jsonl
+benchmarks/results/ragtruth_*.json
+benchmarks/results/ragtruth_*.md
+!benchmarks/results/ragtruth_public_manifest.json
+!benchmarks/results/ragtruth_public_compact_metrics.json
+!benchmarks/results/ragtruth_public_heldout_audit.json
+!benchmarks/results/ragtruth_public_summary.md
+
+# Medical or model artifacts must not be committed to the public demonstrator.
+data/
+datasets/
+images/
+masks/
+models/
+checkpoints/
+
+# Small committed fixtures may use public dataset-like directory shapes.
+!tests/fixtures/operational_control_replay/NAB/data/
+!tests/fixtures/operational_control_replay/NAB/data/**
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.mgz
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Local logs
+*.log
+evidence/validation_gate_final_log.txt
+# Private methodology / know-how records must remain outside the public demonstrator.
+private_methodology_commitments/
+AOS_METHOD_RECORD*.md
+AOS_PRIVATE_METHOD_RECORD*.md
+.benchmarks/

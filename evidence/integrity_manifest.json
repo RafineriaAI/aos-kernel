@@ -1,0 +1,174 @@
+{
+  "schema_version": "aos-kernel-integrity-manifest/v1",
+  "repository_role": "curated_public_kernel_release_surface",
+  "excludes": [
+    "evidence/integrity_manifest.json",
+    "examples/reports/public-replay-trusted-output.json"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "5b0e1ce1f825b160f3ce2ecab2ce0b8f19c5ccf8137482642b13b9796388ffaa"
+    },
+    {
+      "path": ".github/workflows/aos-kernel-ci.yml",
+      "sha256": "6f63a01573e38816b55f2afd3c7e5a7de16aba98c51e266c157dbfa98517fc5d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "ce061e1d04460ef5a8bb8994d833c50cdb01c9978fc43ea9715f240732e8c06f"
+    },
+    {
+      "path": "adapters/__init__.py",
+      "sha256": "4cacc346c0603a57f08c5d922049fa0b23763d2d844223cc8bbdff7d7983f072"
+    },
+    {
+      "path": "adapters/strict_json.py",
+      "sha256": "9eab5eb7a1d6fe2b1c3d59fce966900fff736a93f9f5bc9ebb8bb3ef7ffd94c6"
+    },
+    {
+      "path": "aos_cli/__init__.py",
+      "sha256": "521a357956b45f383d902ac538b929b08c73f7439f447e23dc6dff6269bfc6aa"
+    },
+    {
+      "path": "aos_cli/__main__.py",
+      "sha256": "4a28d92ed9b10585d5f122f026f06196f42a296ae7dffd583bef6ec1f4cf9a3f"
+    },
+    {
+      "path": "aos_cli/cli.py",
+      "sha256": "e9e5ee320c86c3735e8d92e0c57f5ac70657d6423988ad79de065763d9f25e36"
+    },
+    {
+      "path": "aos_cli/trusted_output.py",
+      "sha256": "e3c5c27c09af2b68700f8f9da8f95d1c4d56fcbd3073fe62a3df09bea0daaf4d"
+    },
+    {
+      "path": "COMMERCIAL_BOUNDARY.md",
+      "sha256": "15bb0d8966613718d2d6c5460b3686ca6a7ff66aaca707e265fa383c087add9b"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "9256a7d858a510d10aa73166241ecca2b093a6ab15d5621678d95ebfb9c766ed"
+    },
+    {
+      "path": "core/__init__.py",
+      "sha256": "54ae057c18d5ff6f5dceb9097749bdddbf7549b64f10baaed4482ba354e3ce68"
+    },
+    {
+      "path": "core/aos_public_core.py",
+      "sha256": "e3c255cea543c91fd6d93757fdd6fd36a819ad7d7a46532e0d143999138e582b"
+    },
+    {
+      "path": "docs.json",
+      "sha256": "46a03aa2d3c2a3b0a618aa8b67898972265df2d48691e05d74b334bf126cf3eb"
+    },
+    {
+      "path": "docs/case-studies/public-repo-replay.md",
+      "sha256": "1f80a4544e50a5a90c92d1b6eb49bff4882eaa8be712f8a44625a51ffe3a2780"
+    },
+    {
+      "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
+      "sha256": "f85c27663423cc1f8127acc199405dbecc2ecb6d3dc34a6f68c08ac28b107c40"
+    },
+    {
+      "path": "docs/PROOF_OF_VALUE.md",
+      "sha256": "35a87858e7a29680ae98a79909dd1de7483b966c5aef61d4b256a272fbe3bdd1"
+    },
+    {
+      "path": "docs/PUBLIC_BOUNDARY.md",
+      "sha256": "55e569421ea6a0395742ce216afa04d5e240a64dfd2a37895aa54b47a6ccc61b"
+    },
+    {
+      "path": "docs/TRUSTED_AOS_OUTPUT.md",
+      "sha256": "7a6b26571aed4bd8a494b1536b8ae6e62996289dbfffbd654022fd1b638bbf37"
+    },
+    {
+      "path": "docs/VALIDATION_GATES.md",
+      "sha256": "c39d2771285f7fcef332f7a55efbe2bc0646d8ea1847e9b821aa9edb01b4efb7"
+    },
+    {
+      "path": "EVIDENCE.md",
+      "sha256": "14670e222f377efdffb4ee06dc85ae0dcffb98cb88fab15644401317f193dcf8"
+    },
+    {
+      "path": "examples/reports/public-replay-record.jsonl",
+      "sha256": "f83334117961a9d8c3b8a0de44a3e6b97e3a96f38291dd3041bbcc81d99fed1e"
+    },
+    {
+      "path": "examples/reports/public-replay-summary.md",
+      "sha256": "9b7be020956af54c0d6c25fd3368a9b5571ad32d6a3f410e3c64f05260ebc2af"
+    },
+    {
+      "path": "INTEGRATION.md",
+      "sha256": "3a00a3b6be9d2cb2f74f9e53288dc35b365291a5f97f3676b7eff2b959152914"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "31d6440d7c7216f9b09c8326313591309b4e1a8726b77b682020a33fc8f52809"
+    },
+    {
+      "path": "lakefile.lean",
+      "sha256": "f71c83859b50eadc4d2e6c835c670825baf4edd5b2e18a1ae2ff38d5b751ca8c"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "7dc000621e0046d1aada809e2b7177e64454645cf4c741e9daaf79c99ec2e7a2"
+    },
+    {
+      "path": "lean/AOSAxiomAudit.lean",
+      "sha256": "0db23b4ad86917c6eca82f72685fd56a6848db5c41211ddf2f0a423b7d06dbe8"
+    },
+    {
+      "path": "lean/AOSEnvironmentModel.lean",
+      "sha256": "abe88001cde4be3d27f646aca3fb4b02c9974981d03161d32657cf5349fbaf4d"
+    },
+    {
+      "path": "lean/AOSPublicCore.lean",
+      "sha256": "9b36c251712a3fdbfaa10c7c6e15e63a866644d5a53d6f477fc376ecbbaf3e17"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "00aa5c00c4c86c3f758326a0591e6584f7241cdba319d8f660dacc87d016f299"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "aea717b2e5c2a0129219fe1f263f06b6d3ec002bec9bd29f52414859490c8587"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "e703ab4f91a1442f24705ef1a46d9a211eb97d2cd7a0755384db40950c31ebf7"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a92ecbb43fc6713b50fc573dd9665cafa133c20cae18d53f7f93d638427a52af"
+    },
+    {
+      "path": "SCOPE_OF_PROOF.md",
+      "sha256": "263d7381e94460a423cc5b0ea1e2e6581e39256ed1d044a6b236fe934af812b3"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "bac1180853f5b2392af6e00fb3a442fc3f723d1644db0e62b34c06fea5ad80c7"
+    },
+    {
+      "path": "tests/test_aos_public_core.py",
+      "sha256": "a50c9f4a45e117df821d9b50aea5fb5189063fe4dd698dffd30858d07b3888b0"
+    },
+    {
+      "path": "tests/test_trusted_output.py",
+      "sha256": "8a6bebd1ed6f6bd392b55ac42d64330dbc588ef025917c51c9518982ff55c8ac"
+    },
+    {
+      "path": "tools/run_validation_gate.py",
+      "sha256": "f92f1c3b7b5691108e801739ecbc6331df5c5ac142a78a2592cc4d7cf204bfaf"
+    },
+    {
+      "path": "tools/verify_public_integrity.py",
+      "sha256": "ff2432dcf57500f182cace9ae0b637a1cfa95700829be5ff9f357b16a0563fe1"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    }
+  ]
+}

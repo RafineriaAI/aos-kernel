@@ -1,0 +1,18 @@
+Proprietary Demonstrator Notice
+
+Copyright (c) 2026 Szymon Hetnar. All rights reserved.
+
+This repository is published as a limited proof-of-capability demonstrator only.
+No license is granted to copy, modify, distribute, sublicense, host, sell,
+commercialize, incorporate, or create derivative works from this software or
+documentation without prior written permission from the copyright holder.
+
+The public demonstrator is not the full AOS Core, not a production SDK, and not
+a grant of rights to the proprietary AOS architecture, specialist systems,
+validation stack, policies, calibration methods, formal artifacts, optimization
+layers, or commercial APIs.
+
+Earlier public versions may have been distributed under different terms. This
+notice does not by itself revoke rights, if any, already granted to third
+parties for copies they lawfully obtained under earlier licenses. Final
+licensing and IP strategy should be reviewed with qualified IP counsel.

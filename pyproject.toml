@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aos-kernel"
+version = "0.1.0"
+description = "Curated public AOS kernel demonstrator for deterministic PASS/WARN/BLOCK decisions with replayable evidence."
+keywords = ["runtime-assurance", "ai-assurance", "pass-warn-block", "replayable-evidence", "formal-methods", "lean4"]
+readme = "README.md"
+requires-python = ">=3.10"
+license = "LicenseRef-Proprietary-AOS"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Szymon Hetnar" }]
+dependencies = []
+
+[project.scripts]
+aos = "aos_cli.cli:main"
+aos-trust = "aos_cli.trusted_output:main"
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.10,<2",
+    "pytest>=8.2.0",
+    "ruff>=0.6.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["adapters", "aos_cli", "core"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    ".github",
+    "adapters",
+    "aos_cli",
+    "core",
+    "docs",
+    "evidence",
+    "examples",
+    "lean",
+    "tests",
+    "tools",
+    "COMMERCIAL_BOUNDARY.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "SCOPE_OF_PROOF.md",
+    "docs.json",
+    "lakefile.lean",
+    "lean-toolchain",
+    "pyproject.toml",
+]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["adapters", "aos_cli", "core", "tests", "tools"]
+check_untyped_defs = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+addopts = "-p no:cacheprovider"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

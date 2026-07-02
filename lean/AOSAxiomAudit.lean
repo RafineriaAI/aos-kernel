@@ -1,0 +1,58 @@
+import AOSPublicCore
+import AOSEnvironmentModel
+
+-- Repository-level dependency report for every public theorem.
+-- This prints theorem dependencies; it is not an implementation refinement proof.
+
+#print axioms isValidInputTrueIffWellFormed
+#print axioms strictBlockEnforcement
+#print axioms passEnforcement
+#print axioms blockVerdictCorrect
+#print axioms passVerdictCorrect
+#print axioms warnVerdictCorrect
+#print axioms warnVerdictOnlyWithinBand
+#print axioms deterministicSafetyBool
+#print axioms deterministicBlockBool
+#print axioms deterministicVerdict
+#print axioms jsonInputUpperBoundMatchesFields
+#print axioms auditDecisionReadyHasDigest
+#print axioms auditDecisionReadyHasReplay
+#print axioms exactBlockDecisionNotSilent
+#print axioms controlledStudyAssessmentSound
+#print axioms controlledStudyAssessmentDoesNotOverclaim
+#print axioms publicEffectivenessEvidenceRequiresProtocol
+#print axioms publicEffectivenessEvidenceRequiresEffectivenessReady
+#print axioms labelMappingBlocksEffectivenessReady
+#print axioms controlledStudyReadyRequiresAudit
+#print axioms controlledStudyReadyRequiresDesign
+#print axioms missingMinimumCasesBlocksControlledStudy
+#print axioms jsonWellFormedHasNonnegativeUncertainty
+#print axioms jsonWellFormedWarnMarginBelowLimit
+#print axioms jsonIncompleteInputBlocks
+#print axioms jsonInvalidInputBlocks
+#print axioms jsonCompleteInputUsesIntervalVerdict
+#print axioms jsonCompleteBlockCorrect
+#print axioms jsonCompleteWarnCorrect
+#print axioms jsonCompletePassCorrect
+#print axioms jsonGateVerdictDeterministic
+#print axioms verdictMonotoneWithUpperBound
+
+#print axioms AOSEnvironmentModel.isValidEnvInputTrueIffWellFormed
+#print axioms AOSEnvironmentModel.incompleteMetadataBlocks
+#print axioms AOSEnvironmentModel.invalidInputBlocks
+#print axioms AOSEnvironmentModel.completeBlockCondition
+#print axioms AOSEnvironmentModel.completePassRelation
+#print axioms AOSEnvironmentModel.completeWarnRelation
+#print axioms AOSEnvironmentModel.completeBlockRelation
+#print axioms AOSEnvironmentModel.completePassCondition
+#print axioms AOSEnvironmentModel.verdictDeterministic
+#print axioms AOSEnvironmentModel.replayReadyHasInput
+#print axioms AOSEnvironmentModel.replayReadyHasDigest
+#print axioms AOSEnvironmentModel.replayMatchIsExact
+#print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimRefinement
+#print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimImplementationCorrectness
+#print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimDeploymentAssurance
+#print axioms AOSEnvironmentModel.canonicalTransactionDigestEvent1MatchesVector
+#print axioms AOSEnvironmentModel.canonicalTransactionDigestChainMatchesVector
+#print axioms AOSEnvironmentModel.canonicalTransactionDigestDoesNotClaimFormalHashImplementation
+#print axioms AOSEnvironmentModel.canonicalTransactionDigestDoesNotClaimPythonLeanRefinement
