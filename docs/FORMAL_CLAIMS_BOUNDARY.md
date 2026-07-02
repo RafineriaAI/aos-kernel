@@ -26,6 +26,10 @@ This supports a limited statement:
   refinement, implementation correctness, or deployment assurance;
 - bounded runtime tests for the public Python reference implementation.
 
+`jsonInvalidInputBlocks` is an abstract control-model property. The Python
+reference parser may reject malformed or out-of-contract input before evidence
+generation; that rejection path is not a Python-Lean refinement claim.
+
 ## Sufficiency Boundary
 
 | Claim | Current Lean surface |

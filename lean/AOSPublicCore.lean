@@ -7,8 +7,6 @@ inductive Verdict where
   deriving DecidableEq, Repr
 
 inductive EvidenceLevel where
-  | fixedOutputSmoke
-  | fixedOutputHardCase
   | controlledStudyProtocolRun
   | controlledStudyProtocolReady
   deriving DecidableEq, Repr
@@ -381,10 +379,12 @@ theorem jsonCompletePassCorrect
     (input : JsonGateInput) :
     input.metadataComplete = true ->
     isValidInput input = true ->
-    0 <= input.warnMargin ->
     input.upperBound <= input.limit - input.warnMargin ->
     jsonGateVerdict input = Verdict.pass := by
-  intro hMeta hValid hMargin hPass
+  intro hMeta hValid hPass
+  have hWellFormed : jsonInputWellFormed input := by
+    exact (isValidInputTrueIffWellFormed input).mp hValid
+  have hMargin : 0 <= input.warnMargin := hWellFormed.2.2.2.1
   have hNotBlock : Not (input.upperBound > input.limit) := by
     omega
   have hNotWarn : Not (input.upperBound > input.limit - input.warnMargin) := by

@@ -19,6 +19,46 @@
       "sha256": "faf1c3015f563de420ae3c7528a5268c473d143c3922673dafd9df652b0f0e3d"
     },
     {
+      "path": "COMMERCIAL_BOUNDARY.md",
+      "sha256": "87ccb07b8171b45809d21f854dd1d3471302baaf722dfbcf78c72af8ff18913e"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "ff6f494ee89b85813601b2a8c3ac02620bba70f2d61f2e22e8a371c08bf84c79"
+    },
+    {
+      "path": "EVIDENCE.md",
+      "sha256": "14670e222f377efdffb4ee06dc85ae0dcffb98cb88fab15644401317f193dcf8"
+    },
+    {
+      "path": "INTEGRATION.md",
+      "sha256": "3a00a3b6be9d2cb2f74f9e53288dc35b365291a5f97f3676b7eff2b959152914"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "00aa5c00c4c86c3f758326a0591e6584f7241cdba319d8f660dacc87d016f299"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "aea717b2e5c2a0129219fe1f263f06b6d3ec002bec9bd29f52414859490c8587"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7764deaad4e2406122bacf62d7b780317033435899df26702c56eaa5c12addfb"
+    },
+    {
+      "path": "SCOPE_OF_PROOF.md",
+      "sha256": "263d7381e94460a423cc5b0ea1e2e6581e39256ed1d044a6b236fe934af812b3"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "bac1180853f5b2392af6e00fb3a442fc3f723d1644db0e62b34c06fea5ad80c7"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
       "path": "adapters/__init__.py",
       "sha256": "4cacc346c0603a57f08c5d922049fa0b23763d2d844223cc8bbdff7d7983f072"
     },
@@ -43,14 +83,6 @@
       "sha256": "de6f01ec4af3ca1a279ad13a978498f3f0b61746d93332ab075cb5bfe65939da"
     },
     {
-      "path": "COMMERCIAL_BOUNDARY.md",
-      "sha256": "87ccb07b8171b45809d21f854dd1d3471302baaf722dfbcf78c72af8ff18913e"
-    },
-    {
-      "path": "CONTRIBUTING.md",
-      "sha256": "ff6f494ee89b85813601b2a8c3ac02620bba70f2d61f2e22e8a371c08bf84c79"
-    },
-    {
       "path": "core/__init__.py",
       "sha256": "54ae057c18d5ff6f5dceb9097749bdddbf7549b64f10baaed4482ba354e3ce68"
     },
@@ -63,12 +95,8 @@
       "sha256": "514cf46ba62f48c47ffe26ae699b9d2305996df5aab169152571f1c1c396ec5a"
     },
     {
-      "path": "docs/case-studies/public-repo-replay.md",
-      "sha256": "7a68ad4d334937c2c78201cf6c8963b83aa7ffaddeb4c31bce63ae512b81a72a"
-    },
-    {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
-      "sha256": "6ad9bb1275f2b97d082a8f62063f826c0399fa720faf8ae642fae69ab491f735"
+      "sha256": "b2918fa1744e957a248bd4e45ac8e962b986f715566a2451ceede9c25b0a39ce"
     },
     {
       "path": "docs/PROOF_OF_VALUE.md",
@@ -87,8 +115,8 @@
       "sha256": "c39d2771285f7fcef332f7a55efbe2bc0646d8ea1847e9b821aa9edb01b4efb7"
     },
     {
-      "path": "EVIDENCE.md",
-      "sha256": "14670e222f377efdffb4ee06dc85ae0dcffb98cb88fab15644401317f193dcf8"
+      "path": "docs/case-studies/public-repo-replay.md",
+      "sha256": "7a68ad4d334937c2c78201cf6c8963b83aa7ffaddeb4c31bce63ae512b81a72a"
     },
     {
       "path": "examples/reports/public-replay-record.jsonl",
@@ -97,10 +125,6 @@
     {
       "path": "examples/reports/public-replay-summary.md",
       "sha256": "10e89989a501c04ce5ad8950ea93007d472ab46c7a918b5d7b91090c4cd390f3"
-    },
-    {
-      "path": "INTEGRATION.md",
-      "sha256": "3a00a3b6be9d2cb2f74f9e53288dc35b365291a5f97f3676b7eff2b959152914"
     },
     {
       "path": "lake-manifest.json",
@@ -124,31 +148,11 @@
     },
     {
       "path": "lean/AOSPublicCore.lean",
-      "sha256": "c46687c52ad77dd882c3230273edf45b45cb9f93c84c01c05ad838bd8123d37b"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "00aa5c00c4c86c3f758326a0591e6584f7241cdba319d8f660dacc87d016f299"
-    },
-    {
-      "path": "NOTICE",
-      "sha256": "aea717b2e5c2a0129219fe1f263f06b6d3ec002bec9bd29f52414859490c8587"
+      "sha256": "72aa026b799866d4cf352ad3dc5fa0382038c5db459437e0b624f79106eb6795"
     },
     {
       "path": "pyproject.toml",
       "sha256": "e703ab4f91a1442f24705ef1a46d9a211eb97d2cd7a0755384db40950c31ebf7"
-    },
-    {
-      "path": "README.md",
-      "sha256": "7764deaad4e2406122bacf62d7b780317033435899df26702c56eaa5c12addfb"
-    },
-    {
-      "path": "SCOPE_OF_PROOF.md",
-      "sha256": "263d7381e94460a423cc5b0ea1e2e6581e39256ed1d044a6b236fe934af812b3"
-    },
-    {
-      "path": "SECURITY.md",
-      "sha256": "bac1180853f5b2392af6e00fb3a442fc3f723d1644db0e62b34c06fea5ad80c7"
     },
     {
       "path": "tests/test_aos_public_core.py",
@@ -165,10 +169,6 @@
     {
       "path": "tools/verify_public_integrity.py",
       "sha256": "b98d74312978f0a36554f9399f92fef6263d0a37448f3eedbe4941ea96fff248"
-    },
-    {
-      "path": "VERSION",
-      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     }
   ]
 }
