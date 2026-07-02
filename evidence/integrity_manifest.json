@@ -156,7 +156,7 @@
     },
     {
       "path": "tests/test_trusted_output.py",
-      "sha256": "8a6bebd1ed6f6bd392b55ac42d64330dbc588ef025917c51c9518982ff55c8ac"
+      "sha256": "a4037dd0f5f9c841f2e8b5ac81352130eca8f6c8bed8538568d2ada8198b8a96"
     },
     {
       "path": "tools/run_validation_gate.py",

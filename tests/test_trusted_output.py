@@ -123,7 +123,12 @@ def test_trusted_output_rejects_mismatched_record_hash() -> None:
         raise AssertionError("mismatched record_sha256 was accepted")
 
 
-def test_trusted_output_detects_manifest_mismatch() -> None:
+def test_trusted_output_detects_manifest_mismatch(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(trusted_module, "_manifest_sha256_or_missing", lambda: "c" * 64)
+    monkeypatch.setattr(trusted_module, "_local_manifest_sha256", lambda: "c" * 64)
+
     wrapper = build_unsigned_trusted_output(_record())
     wrapper["manifest_sha256"] = "d" * 64
     wrapper = _rehash(wrapper)
