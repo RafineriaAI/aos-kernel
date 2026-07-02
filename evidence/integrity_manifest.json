@@ -44,11 +44,11 @@
     },
     {
       "path": "COMMERCIAL_BOUNDARY.md",
-      "sha256": "15bb0d8966613718d2d6c5460b3686ca6a7ff66aaca707e265fa383c087add9b"
+      "sha256": "87ccb07b8171b45809d21f854dd1d3471302baaf722dfbcf78c72af8ff18913e"
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "9256a7d858a510d10aa73166241ecca2b093a6ab15d5621678d95ebfb9c766ed"
+      "sha256": "ff6f494ee89b85813601b2a8c3ac02620bba70f2d61f2e22e8a371c08bf84c79"
     },
     {
       "path": "core/__init__.py",
@@ -64,15 +64,15 @@
     },
     {
       "path": "docs/case-studies/public-repo-replay.md",
-      "sha256": "1f80a4544e50a5a90c92d1b6eb49bff4882eaa8be712f8a44625a51ffe3a2780"
+      "sha256": "7a68ad4d334937c2c78201cf6c8963b83aa7ffaddeb4c31bce63ae512b81a72a"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
-      "sha256": "f85c27663423cc1f8127acc199405dbecc2ecb6d3dc34a6f68c08ac28b107c40"
+      "sha256": "6ad9bb1275f2b97d082a8f62063f826c0399fa720faf8ae642fae69ab491f735"
     },
     {
       "path": "docs/PROOF_OF_VALUE.md",
-      "sha256": "35a87858e7a29680ae98a79909dd1de7483b966c5aef61d4b256a272fbe3bdd1"
+      "sha256": "8cb7041afcb6c5e95ad9e334efd2f71ea4032132ce60c53ead7ab39facdb8231"
     },
     {
       "path": "docs/PUBLIC_BOUNDARY.md",
@@ -80,7 +80,7 @@
     },
     {
       "path": "docs/TRUSTED_AOS_OUTPUT.md",
-      "sha256": "7a6b26571aed4bd8a494b1536b8ae6e62996289dbfffbd654022fd1b638bbf37"
+      "sha256": "78f81207f5d06d1dd99ed8c6c2f6eb624ba344ecfd6765e8230781951cfdc1a1"
     },
     {
       "path": "docs/VALIDATION_GATES.md",
@@ -92,11 +92,11 @@
     },
     {
       "path": "examples/reports/public-replay-record.jsonl",
-      "sha256": "f83334117961a9d8c3b8a0de44a3e6b97e3a96f38291dd3041bbcc81d99fed1e"
+      "sha256": "17726501042f67bb3a0f004bf1c2ed122d7b1407a8ab426cbffdb7729f927402"
     },
     {
       "path": "examples/reports/public-replay-summary.md",
-      "sha256": "9b7be020956af54c0d6c25fd3368a9b5571ad32d6a3f410e3c64f05260ebc2af"
+      "sha256": "10e89989a501c04ce5ad8950ea93007d472ab46c7a918b5d7b91090c4cd390f3"
     },
     {
       "path": "INTEGRATION.md",

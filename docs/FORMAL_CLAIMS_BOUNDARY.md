@@ -8,8 +8,6 @@ boundary statement, not a full-system verification claim.
 The public Lean layer verifies selected properties of an abstract
 `PASS` / `WARN` / `BLOCK` verdict model. The public Python runtime is tested
 against the same decision behavior on a bounded demonstrator subset.
-It also contains a small abstract contract for audit-ready decisions,
-controlled-study protocol gating, and the stronger effectiveness-evidence gate.
 
 This supports a limited statement:
 
@@ -23,11 +21,10 @@ This supports a limited statement:
 - deterministic `PASS` / `WARN` / `BLOCK` structure;
 - selected interval-boundary properties;
 - abstract fail-closed behavior for incomplete or invalid structured input;
-- audit-ready decision predicates over abstract records;
-- controlled-study readiness predicates over abstract study criteria;
-- public evidence-level separation between protocol and effectiveness evidence;
-- synthetic benchmark behavior;
-- bounded runtime correspondence tests.
+- audit-ready predicates over abstract records;
+- public boundary predicates that explicitly do not claim Python-Lean
+  refinement, implementation correctness, or deployment assurance;
+- bounded runtime tests for the public Python reference implementation.
 
 ## Sufficiency Boundary
 
@@ -41,25 +38,33 @@ This supports a limited statement:
 
 The Lean target is a formal control-model artifact. It is valuable because it
 removes ambiguity from the published verdict contract. It should not be used as
-the main evidence that AOS improves model behavior.
+the main evidence that AOS improves model behavior, scanner quality, workflow
+security, or production outcomes.
 
-## Build Quality Gate
+## Current Build Quality Gate
 
-The public verification path is:
+The curated repository CI runs the standard validation gate:
 
 ```bash
-python tools/verify_lean_axioms.py
-lake build AOSPublicCore AOSEnvironmentModel AOSAxiomAudit
-lake env leanchecker --fresh AOSAxiomAudit
-python tools/verify_public_integrity.py
+python tools/run_validation_gate.py --standard --skip-install
 ```
 
-The dependency audit covers every public theorem and rejects `sorryAx` or any
-dependency outside the reviewed `propext` and `Quot.sound` set. The integrity
-checker rejects Lean gap terms in committed Lean sources. A clean build, fresh
-same-kernel replay, dependency audit, and independent `nanoda` CI check support
-the formal-boundary claim only. They do not prove consistency, specification
-quality, runtime refinement, or implementation correctness.
+That gate currently executes:
+
+```bash
+ruff check .
+mypy adapters aos_cli core tests tools
+pytest
+python tools/verify_public_integrity.py
+lake build AOSPublicCore
+```
+
+`lake build AOSPublicCore` builds the public Lean package declared in
+`lakefile.lean`, including `AOSPublicCore`, `AOSEnvironmentModel`, and
+`AOSAxiomAudit`. `AOSAxiomAudit` prints theorem dependency information during
+the Lean build.
+
+The current curated CI does not run external proof checkers beyond the Lean package build. Additional independent proof-checking may be future hardening, but it is not part of the current public CI claim.
 
 ## What Is Not Covered
 
@@ -95,5 +100,6 @@ Avoid:
 ## Interpretation
 
 A successful Lean build means that the selected formal target compiles in the
-declared environment. It does not, by itself, prove the correctness of the full
-system, the quality of domain policies, or the safety of any deployment.
+declared environment and emits the public dependency report. It does not, by
+itself, prove the correctness of the full system, the quality of domain
+policies, or the safety of any deployment.

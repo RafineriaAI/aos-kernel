@@ -6,8 +6,8 @@ published verdict easier to check for issuer metadata, record binding, version
 floor and wrapper hash consistency.
 
 ```bash
-aos trust emit --record gate-record.jsonl --output trusted-output.json
-aos trust verify --input trusted-output.json --record gate-record.jsonl
+aos trust emit --record examples/reports/public-replay-record.jsonl --output trusted-output.json
+aos trust verify --input trusted-output.json --record examples/reports/public-replay-record.jsonl
 ```
 
 Public demonstrator status:
