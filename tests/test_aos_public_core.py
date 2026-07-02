@@ -194,6 +194,13 @@ def test_integrity_verification_rejects_corrupted_evidence_payload() -> None:
     assert _evidence_packet_is_rejected(packet)
 
 
+def test_integrity_verification_rejects_extra_input_fields() -> None:
+    packet = deepcopy(_canonical_signal_evidence_packet())
+    packet["input"]["extra_claim"] = "not part of the public schema"
+
+    assert _evidence_packet_is_rejected(packet)
+
+
 @pytest.mark.parametrize("field", ("audit_id", "input_digest"))
 def test_integrity_verification_rejects_missing_evidence_fields(field: str) -> None:
     packet = deepcopy(_canonical_signal_evidence_packet())
@@ -259,6 +266,40 @@ def test_signal_parser_rejects_negative_contract_inputs(
 
     with pytest.raises(ValueError):
         parse_signal(payload)
+
+
+def test_signal_parser_rejects_unknown_fields() -> None:
+    payload: dict[str, Any] = {
+        "limit": 9000,
+        "metadata_complete": True,
+        "score": 7000,
+        "signal_id": "invalid-signal",
+        "uncertainty": 1000,
+        "warn_margin": 1000,
+        "workflow_adapter": "not-public-kernel-schema",
+    }
+
+    with pytest.raises(ValueError, match="unexpected field"):
+        parse_signal(payload)
+
+
+def test_signal_parser_canonicalizes_text_fields() -> None:
+    signal = parse_signal(
+        {
+            "limit": 9000,
+            "metadata_complete": True,
+            "policy_id": " demo-policy ",
+            "policy_version": " 1.0.0 ",
+            "score": 7000,
+            "signal_id": " signal-with-spaces ",
+            "uncertainty": 1000,
+            "warn_margin": 1000,
+        }
+    )
+
+    assert signal.signal_id == "signal-with-spaces"
+    assert signal.policy_id == "demo-policy"
+    assert signal.policy_version == "1.0.0"
 
 
 @pytest.mark.parametrize(

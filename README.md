@@ -9,10 +9,9 @@ signals into deterministic operational decisions with replayable evidence.
 signal -> policy -> PASS / WARN / BLOCK -> JSONL record -> SHA-256 hash
 ```
 
-This repository is the curated public kernel release surface. It is intentionally
-smaller than the development repository: it contains the reference kernel, a
-minimal CLI, Trusted Output v0, Lean proof surface, contract tests, and a compact
-evidence example.
+This repository is the curated public kernel release surface. It contains the
+reference kernel, a minimal CLI, Trusted Output v0, Lean proof surface, contract
+tests, and compact evidence examples needed to inspect the public demonstrator.
 
 Workflow products built on top of the kernel live separately, for example
 [RafineriaAI/aos-workflow-gate](https://github.com/RafineriaAI/aos-workflow-gate).

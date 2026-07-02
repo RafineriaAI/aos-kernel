@@ -11,6 +11,17 @@ REFERENCE_IMPLEMENTATION_ONLY = True
 SCORE_SCALE = 10_000
 DEFAULT_POLICY_ID = "demo_gate_policy_v1"
 DEFAULT_POLICY_VERSION = "1.0.0"
+REQUIRED_SIGNAL_FIELDS = frozenset(
+    {
+        "signal_id",
+        "score",
+        "uncertainty",
+        "limit",
+        "warn_margin",
+        "metadata_complete",
+    }
+)
+OPTIONAL_SIGNAL_FIELDS = frozenset({"policy_id", "policy_version"})
 
 Verdict: TypeAlias = Literal["PASS", "WARN", "BLOCK"]
 
@@ -189,21 +200,21 @@ def require_nat(name: str, value: Any) -> int:
 
 
 def require_text(name: str, value: Any) -> str:
-    if not isinstance(value, str) or not value.strip():
+    if not isinstance(value, str):
         raise ValueError(f"{name} must be a non-empty string")
-    return value
+    normalized = value.strip()
+    if not normalized:
+        raise ValueError(f"{name} must be a non-empty string")
+    return normalized
 
 
 def parse_signal(payload: dict[str, Any]) -> DemoSignal:
-    required = (
-        "signal_id",
-        "score",
-        "uncertainty",
-        "limit",
-        "warn_margin",
-        "metadata_complete",
-    )
-    for field in required:
+    allowed = REQUIRED_SIGNAL_FIELDS | OPTIONAL_SIGNAL_FIELDS
+    unexpected = sorted(set(payload).difference(allowed))
+    if unexpected:
+        raise ValueError("unexpected field(s): " + ", ".join(unexpected))
+
+    for field in REQUIRED_SIGNAL_FIELDS:
         if field not in payload:
             raise ValueError(f"missing required field: {field}")
 
@@ -312,6 +323,7 @@ def verify_signal_evidence(evidence_payload: dict[str, Any]) -> dict[str, Any]:
         "policy_version",
         "replayable",
         "claim_boundary",
+        "input",
     )
     mismatches = [
         {

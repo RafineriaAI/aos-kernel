@@ -10,6 +10,7 @@ from aos_cli import cli
 from aos_cli import trusted_output as trusted_module
 from aos_cli.trusted_output import (
     IMPERSONATION_ATTEMPT,
+    INVALID_SIGNATURE,
     ROLLBACK_DETECTED,
     TAMPERED,
     UNAUTHORIZED_BUILD,
@@ -164,6 +165,38 @@ def test_trusted_output_detects_unauthorized_official_signature_status() -> None
 
     result = verify_trusted_output(wrapper)
     assert result["status"] == UNAUTHORIZED_BUILD
+
+
+def test_trusted_output_rejects_claim_boundary_expansion() -> None:
+    wrapper = build_unsigned_trusted_output(_record())
+    claim_boundary = dict(wrapper["claim_boundary"])
+    claim_boundary["slsa_compliance_claim"] = True
+    wrapper["claim_boundary"] = claim_boundary
+    wrapper = _rehash(wrapper)
+
+    result = verify_trusted_output(wrapper)
+    assert result["status"] == INVALID_SIGNATURE
+
+
+def test_trusted_output_rejects_unexpected_claim_boundary_field() -> None:
+    wrapper = build_unsigned_trusted_output(_record())
+    claim_boundary = dict(wrapper["claim_boundary"])
+    claim_boundary["official_runtime_correctness_claim"] = False
+    wrapper["claim_boundary"] = claim_boundary
+    wrapper = _rehash(wrapper)
+
+    result = verify_trusted_output(wrapper)
+    assert result["status"] == INVALID_SIGNATURE
+
+
+def test_trusted_output_rejects_misleading_provenance_metadata() -> None:
+    wrapper = build_unsigned_trusted_output(_record())
+    wrapper["issuer_trust_status"] = "VERIFIED"
+    wrapper["code_provenance_status"] = "SLSA_VERIFIED"
+    wrapper = _rehash(wrapper)
+
+    result = verify_trusted_output(wrapper)
+    assert result["status"] == INVALID_SIGNATURE
 
 
 def test_trusted_output_detects_older_aos_version() -> None:

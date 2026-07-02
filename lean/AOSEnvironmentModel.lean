@@ -71,8 +71,6 @@ def envVerdict (signal : EnvSignal) (policy : EnvPolicy) : EnvVerdict :=
 def replayReady (record : ReplayRecord) : Bool :=
   record.inputPresent && record.digestPresent
 
-def replayMatches (record : ReplayRecord) : Prop :=
-  record.expected = record.observed
 
 def publicBoundary : EnvironmentBoundary := {
   pythonLeanRefinementClaim := false
@@ -153,14 +151,6 @@ theorem completeWarnRelation
     omega
   simp [envVerdict, hComplete, hValid, hNotBlock, hWarn]
 
-theorem completeBlockRelation
-    (signal : EnvSignal)
-    (policy : EnvPolicy) :
-    signal.metadataComplete = true ->
-    isValidEnvInput signal policy = true ->
-    signal.upperBound > policy.limit ->
-    envVerdict signal policy = EnvVerdict.block := by
-  exact completeBlockCondition signal policy
 
 theorem completePassCondition
     (signal : EnvSignal)
@@ -199,12 +189,6 @@ theorem replayReadyHasDigest
   simp [replayReady] at h
   exact h.2
 
-theorem replayMatchIsExact
-    (record : ReplayRecord) :
-    replayMatches record ->
-    record.expected = record.observed := by
-  intro h
-  exact h
 
 theorem publicBoundaryDoesNotClaimRefinement :
     publicBoundary.pythonLeanRefinementClaim = false := by

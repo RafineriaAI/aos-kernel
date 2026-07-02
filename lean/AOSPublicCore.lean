@@ -24,11 +24,6 @@ def verdictRank : Verdict -> Nat
   | Verdict.warn => 1
   | Verdict.block => 2
 
-def isSafeInterval (upperBound limit : Int) : Bool :=
-  if upperBound <= limit then true else false
-
-def isBlockedInterval (upperBound limit : Int) : Bool :=
-  if upperBound > limit then true else false
 
 def intervalVerdict (upperBound limit warnMargin : Int) : Verdict :=
   if upperBound > limit then Verdict.block
@@ -168,17 +163,6 @@ theorem isValidInputTrueIffWellFormed
     isValidInput input = true ↔ jsonInputWellFormed input := by
   simp [isValidInput, jsonInputWellFormed, and_assoc]
 
-theorem strictBlockEnforcement (upperBound limit : Int) :
-    upperBound > limit ->
-    isBlockedInterval upperBound limit = true := by
-  intro h
-  simp [isBlockedInterval, h]
-
-theorem passEnforcement (upperBound limit : Int) :
-    upperBound <= limit ->
-    isSafeInterval upperBound limit = true := by
-  intro h
-  simp [isSafeInterval, h]
 
 theorem blockVerdictCorrect (upperBound limit warnMargin : Int) :
     upperBound > limit ->
@@ -220,17 +204,6 @@ theorem warnVerdictOnlyWithinBand
       constructor <;> omega
     · simp [hBlock, hWarn]
 
-theorem deterministicSafetyBool (upperBound limit : Int) :
-    Or
-      (isSafeInterval upperBound limit = true)
-      (isSafeInterval upperBound limit = false) := by
-  cases isSafeInterval upperBound limit <;> simp
-
-theorem deterministicBlockBool (upperBound limit : Int) :
-    Or
-      (isBlockedInterval upperBound limit = true)
-      (isBlockedInterval upperBound limit = false) := by
-  cases isBlockedInterval upperBound limit <;> simp
 
 theorem deterministicVerdict
     (upperBound limit warnMargin : Int) :
@@ -246,9 +219,6 @@ theorem deterministicVerdict
     · exact Or.inr (Or.inl rfl)
     · exact Or.inl rfl
 
-theorem jsonInputUpperBoundMatchesFields (input : JsonGateInput) :
-    input.upperBound = input.score + input.uncertainty := by
-  rfl
 
 theorem auditDecisionReadyHasDigest
     (decision : AuditDecision) :

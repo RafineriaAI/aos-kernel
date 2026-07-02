@@ -372,8 +372,31 @@ def _validate_shape(output: dict[str, Any]) -> list[str]:
             errors.append(f"{key} must be a non-empty string")
     if not isinstance(output.get("claim_boundary"), dict):
         errors.append("claim_boundary must be an object")
+    else:
+        claim_boundary = cast(dict[str, Any], output["claim_boundary"])
+        expected_claims = _claim_boundary()
+        missing_claims = sorted(set(expected_claims).difference(claim_boundary))
+        unexpected_claims = sorted(set(claim_boundary).difference(expected_claims))
+        if missing_claims:
+            errors.append(
+                "missing claim_boundary field(s): " + ", ".join(missing_claims)
+            )
+        if unexpected_claims:
+            errors.append(
+                "unexpected claim_boundary field(s): "
+                + ", ".join(unexpected_claims)
+            )
+        for key in sorted(expected_claims):
+            if claim_boundary.get(key) is not False:
+                errors.append(f"claim_boundary {key} must be false")
     if not isinstance(output.get("official_aos_output"), bool):
         errors.append("official_aos_output must be boolean")
+    if output.get("issuer_trust_status") != "UNVERIFIED":
+        errors.append("issuer_trust_status must be UNVERIFIED")
+    if output.get("code_provenance_status") != "PUBLIC_DEMONSTRATOR_UNATTESTED":
+        errors.append(
+            "code_provenance_status must be PUBLIC_DEMONSTRATOR_UNATTESTED"
+        )
     return errors
 
 

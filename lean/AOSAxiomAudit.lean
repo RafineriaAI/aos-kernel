@@ -5,16 +5,11 @@ import AOSEnvironmentModel
 -- This prints theorem dependencies; it is not an implementation refinement proof.
 
 #print axioms isValidInputTrueIffWellFormed
-#print axioms strictBlockEnforcement
-#print axioms passEnforcement
 #print axioms blockVerdictCorrect
 #print axioms passVerdictCorrect
 #print axioms warnVerdictCorrect
 #print axioms warnVerdictOnlyWithinBand
-#print axioms deterministicSafetyBool
-#print axioms deterministicBlockBool
 #print axioms deterministicVerdict
-#print axioms jsonInputUpperBoundMatchesFields
 #print axioms auditDecisionReadyHasDigest
 #print axioms auditDecisionReadyHasReplay
 #print axioms exactBlockDecisionNotSilent
@@ -43,12 +38,10 @@ import AOSEnvironmentModel
 #print axioms AOSEnvironmentModel.completeBlockCondition
 #print axioms AOSEnvironmentModel.completePassRelation
 #print axioms AOSEnvironmentModel.completeWarnRelation
-#print axioms AOSEnvironmentModel.completeBlockRelation
 #print axioms AOSEnvironmentModel.completePassCondition
 #print axioms AOSEnvironmentModel.verdictDeterministic
 #print axioms AOSEnvironmentModel.replayReadyHasInput
 #print axioms AOSEnvironmentModel.replayReadyHasDigest
-#print axioms AOSEnvironmentModel.replayMatchIsExact
 #print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimRefinement
 #print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimImplementationCorrectness
 #print axioms AOSEnvironmentModel.publicBoundaryDoesNotClaimDeploymentAssurance
