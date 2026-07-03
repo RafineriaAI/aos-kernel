@@ -16,7 +16,7 @@
     },
     {
       "path": ".github/workflows/aos-kernel-ci.yml",
-      "sha256": "aed27a0a13c1f6d149343578c6e8454ac0f8c8c6b58d22a4f21960c4d95d7c51"
+      "sha256": "aac92683c8494785ca7209df7afe111ade8d87f8e0f813af553ecf7f63229790"
     },
     {
       "path": ".gitignore",
@@ -48,7 +48,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "b0a79f5b61fb76cf33e12102d21867fe36015e2ae767f15bb4a2b00120bf67d6"
+      "sha256": "effc8a3d4e6d37d56dabd5351138d79b106b408c912cfd1ba3eca826bdd463eb"
     },
     {
       "path": "SCOPE_OF_PROOF.md",
@@ -96,15 +96,19 @@
     },
     {
       "path": "docs.json",
-      "sha256": "8d45c03035d597822e4683edbe6318090a8a7426dd50606da23ca81901d5a301"
+      "sha256": "eb300e503d247dbd2c8e3b073fb529253ba1732b17f16421ee25e9e9e1b97711"
     },
     {
       "path": "docs/AUDIT_PRECHECK.md",
-      "sha256": "9b5e28a3771e9ac1ba124f4d9ba37b5e5954880f06a8db2dfee7a01caf0ff243"
+      "sha256": "15558a6bd00ccbc0f4e5774ced6ef9227ced1170d9605d0b353cd63258e5b99c"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
       "sha256": "b2918fa1744e957a248bd4e45ac8e962b986f715566a2451ceede9c25b0a39ce"
+    },
+    {
+      "path": "docs/MAINTENANCE_POLICY.md",
+      "sha256": "ec23e574aff86fd43fc6ad00562d8a33801be47432b150bcc6eb81bfc027bde5"
     },
     {
       "path": "docs/PROOF_OF_VALUE.md",
@@ -116,7 +120,7 @@
     },
     {
       "path": "docs/RELEASE_GOVERNANCE.md",
-      "sha256": "493d1f571805706a30e69127824cb8a54f7c82ffff86c0ddcd366c67abf2a012"
+      "sha256": "3e869fe5878cafca125d0a510f54aac0b236ab07fa9417ac5fc32751063221e2"
     },
     {
       "path": "docs/TRUSTED_AOS_OUTPUT.md",
@@ -192,7 +196,7 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "33666cfc64cc4af02fb080a6dddc5718b68532138f470c34e26d4ee82275abc5"
+      "sha256": "1a7ba2383098103168ed65e2ffaf7f171e13fcb4e643dba25e3a3fbf24c1cc2a"
     },
     {
       "path": "tools/run_validation_gate.py",

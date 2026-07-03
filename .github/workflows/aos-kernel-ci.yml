@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   validate:
+    name: AOS Kernel CI / validate
     runs-on: ubuntu-latest
     steps:
       # Pinned from actions/checkout@v4 on 2026-07-03.

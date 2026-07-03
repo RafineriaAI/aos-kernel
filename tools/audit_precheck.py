@@ -17,6 +17,7 @@ EXPECTED_REMOTE_URLS = {
     "git@github.com:RafineriaAI/aos-kernel.git",
 }
 TRUSTED_OUTPUT_FIXTURE = "examples/reports/public-replay-trusted-output.json"
+REQUIRED_CI_CHECK_CONTEXT = "AOS Kernel CI / validate"
 FULL_SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 SEMVER_RE = re.compile(
     r"^(0|[1-9]\d*)\."
@@ -36,6 +37,7 @@ REQUIRED_DOCS = {
     "COMMERCIAL_BOUNDARY.md",
     "docs/AUDIT_PRECHECK.md",
     "docs/RELEASE_GOVERNANCE.md",
+    "docs/MAINTENANCE_POLICY.md",
     "docs/TRUSTED_AOS_OUTPUT.md",
     "docs/FORMAL_CLAIMS_BOUNDARY.md",
     "docs/PUBLIC_BOUNDARY.md",
@@ -74,6 +76,12 @@ REQUIRED_BOUNDARY_TEXT = {
         "Do not delete, recreate, or force-push",
         "AOS Kernel CI / validate",
         "no production/compliance/signing claim",
+    ),
+    "docs/MAINTENANCE_POLICY.md": (
+        "scope-locked maintenance mode",
+        "workflow-product development moves",
+        "Do not add workflow-product behavior",
+        "production readiness, compliance, official signing",
     ),
 }
 EXPECTED_FALSE_CLAIMS = {
@@ -405,6 +413,13 @@ def check_ci(findings: list[Finding]) -> None:
         add(findings, "FAIL", "ci.checkout", "persist-credentials false missing")
     if "python tools/run_validation_gate.py --standard --skip-install" not in workflow:
         add(findings, "FAIL", "ci.standard-gate", "standard gate missing")
+    if f"name: {REQUIRED_CI_CHECK_CONTEXT}" not in workflow:
+        add(
+            findings,
+            "FAIL",
+            "ci.required-check",
+            f"required check context must be {REQUIRED_CI_CHECK_CONTEXT}",
+        )
     for trigger in ("pull_request_target", "workflow_run"):
         if trigger in workflow:
             add(findings, "FAIL", "ci.privileged-trigger", f"{trigger} not allowed")

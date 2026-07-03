@@ -46,9 +46,10 @@ annotated release tag.
 - Integrity: delegates to `tools/verify_public_integrity.py`.
 - Lean surface: public Lean files avoid gap terms such as `sorry` and `admit`.
 - CI shape: minimal permissions, no privileged PR triggers, checkout credentials
-  disabled, canonical standard gate invoked, third-party actions pinned to full
-  commit SHA values, and Dependabot configured for Actions and Python updates
-  while routing major updates to manual review.
+  disabled, canonical standard gate invoked, required check context named
+  `AOS Kernel CI / validate`, third-party actions pinned to full commit SHA
+  values, and Dependabot configured for Actions and Python updates while routing
+  major updates to manual review.
 
 ## Severity Model
 
