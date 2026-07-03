@@ -20,7 +20,7 @@ aos-trust = "aos_cli.trusted_output:main"
 
 [project.optional-dependencies]
 dev = [
-    "mypy>=1.10,<2",
+    "mypy>=1.10,<3",
     "pytest>=8.2.0",
     "ruff>=0.6.0",
 ]
