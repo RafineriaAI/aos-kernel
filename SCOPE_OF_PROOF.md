@@ -11,7 +11,7 @@ For claim-level interpretation, see
 - deterministic abstract verdict logic in the public Lean proof surface
 - explicit policy evaluation in the public interval-gate demonstrator
 - audit digest generation for demonstrator decisions
-- reproducible JSON evidence for the current synthetic benchmark set
+- reproducible JSON evidence for the current synthetic fixture set
 
 ## Formal Sufficiency
 
