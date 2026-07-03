@@ -23,7 +23,7 @@ ISSUER_ID: Final = "rafineriaai-aos"
 GENERATED_WITH: Final = "AOS Kernel"
 PROVIDER: Final = "RafineriaAI"
 PACKAGE_NAME: Final = "aos-kernel"
-FALLBACK_AOS_VERSION: Final = "0.1.0"
+FALLBACK_AOS_VERSION: Final = "0.1.1"
 UNSIGNED_NOTICE: Final = (
     "Unsigned output. This is not an official RafineriaAI/AOS signed verdict. "
     "For source-record comparison, verify with --record."

@@ -12,7 +12,7 @@
     },
     {
       "path": ".github/workflows/aos-kernel-ci.yml",
-      "sha256": "6f63a01573e38816b55f2afd3c7e5a7de16aba98c51e266c157dbfa98517fc5d"
+      "sha256": "aed27a0a13c1f6d149343578c6e8454ac0f8c8c6b58d22a4f21960c4d95d7c51"
     },
     {
       "path": ".gitignore",
@@ -44,7 +44,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "3876eee92ae95f3670a36437449f4adda8e1a43b99280b5fcdf9b0100be128b2"
+      "sha256": "b0a79f5b61fb76cf33e12102d21867fe36015e2ae767f15bb4a2b00120bf67d6"
     },
     {
       "path": "SCOPE_OF_PROOF.md",
@@ -56,7 +56,7 @@
     },
     {
       "path": "VERSION",
-      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
     },
     {
       "path": "adapters/__init__.py",
@@ -80,7 +80,7 @@
     },
     {
       "path": "aos_cli/trusted_output.py",
-      "sha256": "de6f01ec4af3ca1a279ad13a978498f3f0b61746d93332ab075cb5bfe65939da"
+      "sha256": "64969ec6537d5bacc7f2027a81df127c98317b6d229d7b7b48873414dfff4bc8"
     },
     {
       "path": "core/__init__.py",
@@ -92,7 +92,11 @@
     },
     {
       "path": "docs.json",
-      "sha256": "514cf46ba62f48c47ffe26ae699b9d2305996df5aab169152571f1c1c396ec5a"
+      "sha256": "13fc5dc8b57facaaf450e03282a75c049e7b44516b40b870bd96ecd21af6808c"
+    },
+    {
+      "path": "docs/AUDIT_PRECHECK.md",
+      "sha256": "ebeb6bf0b1784a57142abdb0014c0c7ffacc3e2336d9fc22526fbe487deecb06"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
@@ -112,11 +116,15 @@
     },
     {
       "path": "docs/VALIDATION_GATES.md",
-      "sha256": "c39d2771285f7fcef332f7a55efbe2bc0646d8ea1847e9b821aa9edb01b4efb7"
+      "sha256": "c059644ad9585a8f715cba5558542f63844cfdf385afe0fdbd3e414763201ea2"
     },
     {
       "path": "docs/case-studies/public-repo-replay.md",
       "sha256": "8febdbb48da125a0c6e3f18f97565eb16f59b5060e9b1f42e0209e89c156f349"
+    },
+    {
+      "path": "docs/releases/v0.1.0.md",
+      "sha256": "7f0292a677e7452bd6e50d6b8a662351485e5a213350b66d85d906cb4056819c"
     },
     {
       "path": "examples/reports/public-replay-record.jsonl",
@@ -152,15 +160,27 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "e703ab4f91a1442f24705ef1a46d9a211eb97d2cd7a0755384db40950c31ebf7"
+      "sha256": "13058b64fe84eaa464fe569a0b7d08c14340ceebdc774f6e1141d03a8c29ea5a"
     },
     {
       "path": "tests/test_aos_public_core.py",
       "sha256": "b0344da62338a15de0f8fef71a902ca5a2de64b87ac9a7a82cbd4e305a45ab45"
     },
     {
+      "path": "tests/test_audit_precheck.py",
+      "sha256": "6b28a47b7bd246a68f9bc52d85994041bae973bd0fbd7c2a897402586adc221c"
+    },
+    {
       "path": "tests/test_trusted_output.py",
       "sha256": "4c5766de1f86b33f9fbe923f4548237b974e84746eb9df01f8f4e0efeee3ca24"
+    },
+    {
+      "path": "tools/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/audit_precheck.py",
+      "sha256": "07ec9a9e2207a8073267e57b12e70ef7edab056b0ba1c3e6fdc8d912346966e5"
     },
     {
       "path": "tools/run_validation_gate.py",

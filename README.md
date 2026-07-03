@@ -1,6 +1,6 @@
 # AOS Kernel
 
-Public demonstrator version: `0.1.0`
+Public demonstrator version: `0.1.1`
 
 AOS Kernel is a model-agnostic runtime assurance kernel. It converts bounded
 signals into deterministic operational decisions with replayable evidence.
@@ -33,6 +33,17 @@ scanner / CI / evaluation signal -> AOS Kernel -> decision + evidence
 | Tamper detection | `verify_signal_evidence()` and `aos trust verify` |
 | Abstract formal surface | `lean/AOSPublicCore.lean` |
 | Publication boundary | `SCOPE_OF_PROOF.md`, `COMMERCIAL_BOUNDARY.md` |
+
+## Practical Use Case
+
+A scanner, eval, or CI job can produce a bounded signal that needs a repeatable
+handoff decision before downstream workflow use. AOS Kernel does not decide that
+an artifact is safe. It turns the bounded signal into a deterministic
+`PASS` / `WARN` / `BLOCK` decision and a replayable evidence record.
+
+The practical aha moment: later reviewers can inspect the exact input digest,
+policy id, decision, and wrapper verification status instead of reconstructing a
+one-off CI judgment from logs.
 
 ## Try It
 
@@ -83,6 +94,12 @@ python tools/run_validation_gate.py --standard --skip-install
 The standard gate runs formatting/lint checks, type checks, tests, integrity
 verification, and the public Lean surface build when Lean is available.
 
+For release-surface audit precheck:
+
+```bash
+python tools/audit_precheck.py
+```
+
 ## What This Proves
 
 The public kernel demonstrates that a bounded input can be converted into a
@@ -112,6 +129,7 @@ signing keys, deployment hardening, customer workflows, and commercial scoring.
 | `tests/` | Contract and tamper-detection tests |
 | `examples/reports/` | Sanitized replay example |
 | `tools/run_validation_gate.py` | Canonical local validation entrypoint |
+| `tools/audit_precheck.py` | Release-surface audit precheck |
 | `evidence/integrity_manifest.json` | Public integrity manifest |
 
 ## License

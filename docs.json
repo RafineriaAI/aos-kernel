@@ -9,10 +9,12 @@
     {"path": "COMMERCIAL_BOUNDARY.md", "purpose": "source-available commercial/IP boundary"},
     {"path": "docs/TRUSTED_AOS_OUTPUT.md", "purpose": "Trusted Output v0 wrapper"},
     {"path": "docs/FORMAL_CLAIMS_BOUNDARY.md", "purpose": "formal-methods claim boundary"},
+    {"path": "docs/AUDIT_PRECHECK.md", "purpose": "release-surface audit precheck"},
     {"path": "docs/PUBLIC_BOUNDARY.md", "purpose": "public/private repository split"},
     {"path": "docs/PROOF_OF_VALUE.md", "purpose": "bounded demonstrator evaluation path"},
     {"path": "docs/VALIDATION_GATES.md", "purpose": "local validation commands"},
     {"path": "docs/case-studies/public-repo-replay.md", "purpose": "compact replay fixture case study"},
+    {"path": "docs/releases/v0.1.0.md", "purpose": "GitHub Release note draft for v0.1.0"},
     {"path": "examples/reports/public-replay-summary.md", "purpose": "sanitized example output"}
   ]
 }

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aos-kernel"
-version = "0.1.0"
+version = "0.1.1"
 description = "Curated public AOS kernel demonstrator for deterministic PASS/WARN/BLOCK decisions with replayable evidence."
 keywords = ["runtime-assurance", "ai-assurance", "pass-warn-block", "replayable-evidence", "formal-methods", "lean4"]
 readme = "README.md"
