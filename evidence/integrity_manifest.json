@@ -96,11 +96,11 @@
     },
     {
       "path": "docs.json",
-      "sha256": "3d00726b031c544b528cf8b4f3b79dc2bca21d64a1a39b91edf62727e4db08ac"
+      "sha256": "8d45c03035d597822e4683edbe6318090a8a7426dd50606da23ca81901d5a301"
     },
     {
       "path": "docs/AUDIT_PRECHECK.md",
-      "sha256": "e8f8fa60ef523b72bcae1e97b0ce0b2dd63582b462d5c38f7ff69ba33a1986f3"
+      "sha256": "9b5e28a3771e9ac1ba124f4d9ba37b5e5954880f06a8db2dfee7a01caf0ff243"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
@@ -113,6 +113,10 @@
     {
       "path": "docs/PUBLIC_BOUNDARY.md",
       "sha256": "55e569421ea6a0395742ce216afa04d5e240a64dfd2a37895aa54b47a6ccc61b"
+    },
+    {
+      "path": "docs/RELEASE_GOVERNANCE.md",
+      "sha256": "493d1f571805706a30e69127824cb8a54f7c82ffff86c0ddcd366c67abf2a012"
     },
     {
       "path": "docs/TRUSTED_AOS_OUTPUT.md",
@@ -188,7 +192,7 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "ffe9459a3d044a4f3d5efc11ca1eb196c2a3581483459744a301eae7663968f3"
+      "sha256": "33666cfc64cc4af02fb080a6dddc5718b68532138f470c34e26d4ee82275abc5"
     },
     {
       "path": "tools/run_validation_gate.py",

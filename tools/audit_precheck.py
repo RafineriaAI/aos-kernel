@@ -35,6 +35,7 @@ REQUIRED_DOCS = {
     "SCOPE_OF_PROOF.md",
     "COMMERCIAL_BOUNDARY.md",
     "docs/AUDIT_PRECHECK.md",
+    "docs/RELEASE_GOVERNANCE.md",
     "docs/TRUSTED_AOS_OUTPUT.md",
     "docs/FORMAL_CLAIMS_BOUNDARY.md",
     "docs/PUBLIC_BOUNDARY.md",
@@ -67,6 +68,12 @@ REQUIRED_BOUNDARY_TEXT = {
         "abstract public verdict model",
         "not a Python-Lean refinement claim",
         "The Lean layer proves production runtime correctness.",
+    ),
+    "docs/RELEASE_GOVERNANCE.md": (
+        "Release tags are immutable",
+        "Do not delete, recreate, or force-push",
+        "AOS Kernel CI / validate",
+        "no production/compliance/signing claim",
     ),
 }
 EXPECTED_FALSE_CLAIMS = {

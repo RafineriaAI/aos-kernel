@@ -37,8 +37,8 @@ annotated release tag.
   local release tag absence, and optional remote tag absence.
 - Version coherence: `VERSION`, `pyproject.toml`, README public demonstrator
   version, and SemVer-compatible release input.
-- Documentation map: `docs.json` lists existing public documents and keeps the
-  curated public kernel role.
+- Documentation map: `docs.json` lists existing public documents, release
+  governance, and the curated public kernel role.
 - Public claim boundary: no stale trust-wording and required negative
   production, compliance, security, signing, and refinement boundaries remain.
 - Trusted Output v0: the public fixture remains `UNSIGNED_NOT_OFFICIAL`,
@@ -64,7 +64,8 @@ release, manually verify:
 
 - latest GitHub Actions run for the final commit is green;
 - `main` has branch protection or a ruleset with required status checks;
-- release tag protection or a documented no-retag policy is in place;
+- release tag protection exists or `docs/RELEASE_GOVERNANCE.md` no-retag policy
+  is followed;
 - GitHub About, Topics, and release notes match the public demonstrator claim;
 - no official package, SBOM, attestation, or signing claim is published unless
   the corresponding infrastructure exists and is separately audited.

@@ -10,6 +10,7 @@
     {"path": "docs/TRUSTED_AOS_OUTPUT.md", "purpose": "Trusted Output v0 wrapper"},
     {"path": "docs/FORMAL_CLAIMS_BOUNDARY.md", "purpose": "formal-methods claim boundary"},
     {"path": "docs/AUDIT_PRECHECK.md", "purpose": "release-surface audit precheck"},
+    {"path": "docs/RELEASE_GOVERNANCE.md", "purpose": "release tag and repository protection policy"},
     {"path": "docs/PUBLIC_BOUNDARY.md", "purpose": "public/private repository split"},
     {"path": "docs/PROOF_OF_VALUE.md", "purpose": "bounded demonstrator evaluation path"},
     {"path": "docs/VALIDATION_GATES.md", "purpose": "local validation commands"},
