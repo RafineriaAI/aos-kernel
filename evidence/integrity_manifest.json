@@ -16,7 +16,7 @@
     },
     {
       "path": ".github/workflows/aos-kernel-ci.yml",
-      "sha256": "aed27a0a13c1f6d149343578c6e8454ac0f8c8c6b58d22a4f21960c4d95d7c51"
+      "sha256": "aac92683c8494785ca7209df7afe111ade8d87f8e0f813af553ecf7f63229790"
     },
     {
       "path": ".gitignore",
@@ -100,7 +100,7 @@
     },
     {
       "path": "docs/AUDIT_PRECHECK.md",
-      "sha256": "9b5e28a3771e9ac1ba124f4d9ba37b5e5954880f06a8db2dfee7a01caf0ff243"
+      "sha256": "15558a6bd00ccbc0f4e5774ced6ef9227ced1170d9605d0b353cd63258e5b99c"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
@@ -196,7 +196,7 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "8015cad72c027c59bedad59023e5acb11f57bcef6e5efd66c32d35ac11435c22"
+      "sha256": "1a7ba2383098103168ed65e2ffaf7f171e13fcb4e643dba25e3a3fbf24c1cc2a"
     },
     {
       "path": "tools/run_validation_gate.py",
