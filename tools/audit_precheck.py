@@ -36,6 +36,7 @@ REQUIRED_DOCS = {
     "COMMERCIAL_BOUNDARY.md",
     "docs/AUDIT_PRECHECK.md",
     "docs/RELEASE_GOVERNANCE.md",
+    "docs/MAINTENANCE_POLICY.md",
     "docs/TRUSTED_AOS_OUTPUT.md",
     "docs/FORMAL_CLAIMS_BOUNDARY.md",
     "docs/PUBLIC_BOUNDARY.md",
@@ -74,6 +75,12 @@ REQUIRED_BOUNDARY_TEXT = {
         "Do not delete, recreate, or force-push",
         "AOS Kernel CI / validate",
         "no production/compliance/signing claim",
+    ),
+    "docs/MAINTENANCE_POLICY.md": (
+        "scope-locked maintenance mode",
+        "workflow-product development moves",
+        "Do not add workflow-product behavior",
+        "production readiness, compliance, official signing",
     ),
 }
 EXPECTED_FALSE_CLAIMS = {

@@ -70,6 +70,7 @@ model, Python demonstrator, reproducible fixture evidence, Trusted Output v0 as
 ## Operational Handoff
 
 After `v0.1.1`, keep `aos-kernel` focused on kernel code, tests, evidence,
-release notes, and formal surface. Workflow-product experiments belong in
+release notes, and formal surface. The detailed maintenance boundary is tracked
+in `docs/MAINTENANCE_POLICY.md`. Workflow-product experiments belong in
 `aos-workflow-gate` unless they are required to preserve the public kernel
 contract.

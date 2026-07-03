@@ -16,6 +16,9 @@ tests, and compact evidence examples needed to inspect the public demonstrator.
 Workflow products built on top of the kernel live separately, for example
 [RafineriaAI/aos-workflow-gate](https://github.com/RafineriaAI/aos-workflow-gate).
 
+After `v0.1.1`, this repository is in scope-locked maintenance mode. See
+[docs/MAINTENANCE_POLICY.md](docs/MAINTENANCE_POLICY.md).
+
 ## What It Does
 
 AOS does not replace scanners, guardrails, reviewers, operators, or final
