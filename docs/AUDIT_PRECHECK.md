@@ -47,7 +47,8 @@ annotated release tag.
 - Lean surface: public Lean files avoid gap terms such as `sorry` and `admit`.
 - CI shape: minimal permissions, no privileged PR triggers, checkout credentials
   disabled, canonical standard gate invoked, third-party actions pinned to full
-  commit SHA values, and Dependabot configured for Actions and Python updates.
+  commit SHA values, and Dependabot configured for Actions and Python updates
+  while routing major updates to manual review.
 
 ## Severity Model
 

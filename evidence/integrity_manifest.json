@@ -12,7 +12,7 @@
     },
     {
       "path": ".github/dependabot.yml",
-      "sha256": "ceaec54f4c63f19679693c542d6e13efbffe328edcf5805478e0c21ae4d15566"
+      "sha256": "d30a5b26a57c109102179a67066847cb55e4a014d5ca3a3c368b4431a8d385b2"
     },
     {
       "path": ".github/workflows/aos-kernel-ci.yml",
@@ -100,7 +100,7 @@
     },
     {
       "path": "docs/AUDIT_PRECHECK.md",
-      "sha256": "589d4a2a5618803dcb45622a727bf6c2e907ba4c29ae74ffbed11bc6174f5190"
+      "sha256": "e8f8fa60ef523b72bcae1e97b0ce0b2dd63582b462d5c38f7ff69ba33a1986f3"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
@@ -188,7 +188,7 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "6f56cf7c309242d58069b418447a5c4b4cd5de1e0e2f392058c9c015f62bafe8"
+      "sha256": "ffe9459a3d044a4f3d5efc11ca1eb196c2a3581483459744a301eae7663968f3"
     },
     {
       "path": "tools/run_validation_gate.py",

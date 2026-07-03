@@ -8,6 +8,10 @@ updates:
       time: "08:00"
       timezone: "Europe/Warsaw"
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
     commit-message:
       prefix: "deps(actions)"
 
@@ -19,5 +23,9 @@ updates:
       time: "08:15"
       timezone: "Europe/Warsaw"
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
     commit-message:
       prefix: "deps(python)"

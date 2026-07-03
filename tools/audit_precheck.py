@@ -421,6 +421,7 @@ def check_dependabot(findings: list[Finding]) -> None:
         'package-ecosystem: "pip"',
         'directory: "/"',
         "interval: \"weekly\"",
+        "version-update:semver-major",
     )
     for snippet in required:
         if snippet not in config:
