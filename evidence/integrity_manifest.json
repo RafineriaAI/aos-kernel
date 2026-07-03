@@ -11,6 +11,10 @@
       "sha256": "5b0e1ce1f825b160f3ce2ecab2ce0b8f19c5ccf8137482642b13b9796388ffaa"
     },
     {
+      "path": ".github/dependabot.yml",
+      "sha256": "ceaec54f4c63f19679693c542d6e13efbffe328edcf5805478e0c21ae4d15566"
+    },
+    {
       "path": ".github/workflows/aos-kernel-ci.yml",
       "sha256": "aed27a0a13c1f6d149343578c6e8454ac0f8c8c6b58d22a4f21960c4d95d7c51"
     },
@@ -92,11 +96,11 @@
     },
     {
       "path": "docs.json",
-      "sha256": "13fc5dc8b57facaaf450e03282a75c049e7b44516b40b870bd96ecd21af6808c"
+      "sha256": "3d00726b031c544b528cf8b4f3b79dc2bca21d64a1a39b91edf62727e4db08ac"
     },
     {
       "path": "docs/AUDIT_PRECHECK.md",
-      "sha256": "ebeb6bf0b1784a57142abdb0014c0c7ffacc3e2336d9fc22526fbe487deecb06"
+      "sha256": "589d4a2a5618803dcb45622a727bf6c2e907ba4c29ae74ffbed11bc6174f5190"
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
@@ -125,6 +129,10 @@
     {
       "path": "docs/releases/v0.1.0.md",
       "sha256": "7f0292a677e7452bd6e50d6b8a662351485e5a213350b66d85d906cb4056819c"
+    },
+    {
+      "path": "docs/releases/v0.1.1.md",
+      "sha256": "90d9e9d27ff15ba3d7f2738652138267c2ac80a46d1ec95afa7cd06943492c06"
     },
     {
       "path": "examples/reports/public-replay-record.jsonl",
@@ -180,7 +188,7 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "07ec9a9e2207a8073267e57b12e70ef7edab056b0ba1c3e6fdc8d912346966e5"
+      "sha256": "6f56cf7c309242d58069b418447a5c4b4cd5de1e0e2f392058c9c015f62bafe8"
     },
     {
       "path": "tools/run_validation_gate.py",

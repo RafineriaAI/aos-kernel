@@ -42,6 +42,7 @@ REQUIRED_DOCS = {
     "docs/VALIDATION_GATES.md",
     "docs/case-studies/public-repo-replay.md",
     "docs/releases/v0.1.0.md",
+    "docs/releases/v0.1.1.md",
     "examples/reports/public-replay-summary.md",
 }
 REQUIRED_BOUNDARY_TEXT = {
@@ -408,6 +409,29 @@ def check_ci(findings: list[Finding]) -> None:
         add(findings, "FAIL", "ci.action-pin", f"{action_ref} is not pinned")
 
 
+def check_dependabot(findings: list[Finding]) -> None:
+    path = REPO_ROOT / ".github" / "dependabot.yml"
+    if not path.is_file():
+        add(findings, "FAIL", "dependabot.config", "dependabot.yml missing")
+        return
+    config = path.read_text(encoding="utf-8")
+    required = (
+        "version: 2",
+        'package-ecosystem: "github-actions"',
+        'package-ecosystem: "pip"',
+        'directory: "/"',
+        "interval: \"weekly\"",
+    )
+    for snippet in required:
+        if snippet not in config:
+            add(
+                findings,
+                "FAIL",
+                "dependabot.config",
+                f"dependabot.yml missing {snippet}",
+            )
+
+
 def check_public_surface(findings: list[Finding]) -> None:
     paths = tracked_paths()
     if not paths:
@@ -444,6 +468,7 @@ def run_precheck(config: PrecheckConfig) -> list[Finding]:
         lambda: check_trusted_output_fixture(findings),
         lambda: check_lean_surface(findings),
         lambda: check_ci(findings),
+        lambda: check_dependabot(findings),
         lambda: check_public_surface(findings),
         lambda: check_integrity(findings),
     )
