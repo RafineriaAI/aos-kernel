@@ -49,7 +49,7 @@ jobs:
         run: gitleaks detect --source . --redact --verbose
 
   scorecard:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     name: AOS Kernel Supply Chain / scorecard
     runs-on: ubuntu-latest
     permissions:

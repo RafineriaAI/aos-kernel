@@ -24,7 +24,7 @@
     },
     {
       "path": ".github/workflows/aos-kernel-supply-chain.yml",
-      "sha256": "a5337a0757ee45ab863fe1feb03776457669c38d2407d17ab97cf4d874481502"
+      "sha256": "63ea7935e7a3cfbb9f79cb4caeb9323d1bc17266dc5c4ddfa4362b303291eddd"
     },
     {
       "path": ".gitignore",
@@ -220,7 +220,7 @@
     },
     {
       "path": "tools/verify_public_integrity.py",
-      "sha256": "240a836c49eaf529a7313b28b262cd7441be24a416df5650225f09ea075f954f"
+      "sha256": "03a523074f243843e1b87e30774d29536a3366b1f0578904197ba558a9cb3c34"
     }
   ]
 }
