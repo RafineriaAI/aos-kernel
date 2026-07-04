@@ -1,6 +1,9 @@
 # Security Policy
 
-Report security issues confidentially to the maintainer.
+Report security issues confidentially to the maintainer through GitHub private
+vulnerability reporting:
+[Report a vulnerability](https://github.com/RafineriaAI/aos-kernel/security/advisories/new)
+(repository **Security** tab -> **Report a vulnerability**).
 
 Do not open public issues, pull requests, discussions, comments, screenshots, or
 logs containing secrets, credentials, controlled datasets, model weights,
