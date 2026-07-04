@@ -56,7 +56,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "6ae0904c9b8a2fbb48939d02fb47547f70b7ede39a27e0e318c30e643a3d8aa5"
+      "sha256": "8dd3d73a153682eb46ed31af7f016a50eb62bcff8b232773076f2ded870eadc6"
     },
     {
       "path": "SCOPE_OF_PROOF.md",
@@ -220,7 +220,7 @@
     },
     {
       "path": "tools/verify_public_integrity.py",
-      "sha256": "03a523074f243843e1b87e30774d29536a3366b1f0578904197ba558a9cb3c34"
+      "sha256": "1d825096938c7b2ca0e436a9a71426dfecee133fcba978db670047e08ffb548d"
     }
   ]
 }
