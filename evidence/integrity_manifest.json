@@ -12,7 +12,7 @@
     },
     {
       "path": ".github/dependabot.yml",
-      "sha256": "d30a5b26a57c109102179a67066847cb55e4a014d5ca3a3c368b4431a8d385b2"
+      "sha256": "d3aa3d4facd0f2f1440063bea91f95f0753c7f7b7365866591375126772b0c35"
     },
     {
       "path": ".github/workflows/aos-kernel-ci.yml",
