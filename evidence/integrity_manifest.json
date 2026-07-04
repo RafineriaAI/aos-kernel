@@ -24,7 +24,7 @@
     },
     {
       "path": ".github/workflows/aos-kernel-supply-chain.yml",
-      "sha256": "f9e0e13fe3f728f618a8509016b57ed6173c6a362daec82fef9bf21e63ad10bb"
+      "sha256": "a5337a0757ee45ab863fe1feb03776457669c38d2407d17ab97cf4d874481502"
     },
     {
       "path": ".gitignore",

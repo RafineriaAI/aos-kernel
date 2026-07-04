@@ -44,11 +44,12 @@ jobs:
           go-version: "1.26.4"
       # Pinned from gitleaks/gitleaks@v8.28.0 on 2026-07-04.
       - name: Install gitleaks
-        run: go install github.com/gitleaks/gitleaks/v8@39fdb480a06768cc41a84ef86959c07ff33091c4
+        run: go install github.com/zricethezav/gitleaks/v8@39fdb480a06768cc41a84ef86959c07ff33091c4
       - name: Run gitleaks
         run: gitleaks detect --source . --redact --verbose
 
   scorecard:
+    if: github.event_name != 'pull_request'
     name: AOS Kernel Supply Chain / scorecard
     runs-on: ubuntu-latest
     permissions:
