@@ -1,0 +1,69 @@
+name: AOS Kernel Supply Chain
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    name: AOS Kernel Supply Chain / actionlint
+    runs-on: ubuntu-latest
+    steps:
+      # Pinned from actions/checkout@v4 on 2026-07-04.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      # Pinned from actions/setup-go@v6 on 2026-07-04.
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: "1.26.4"
+      # Pinned from rhysd/actionlint@v1.7.7 on 2026-07-04.
+      - name: Install actionlint
+        run: go install github.com/rhysd/actionlint/cmd/actionlint@03d0035246f3e81f36aed592ffb4bebf33a03106
+      - name: Run actionlint
+        run: actionlint -color
+
+  gitleaks:
+    name: AOS Kernel Supply Chain / gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      # Pinned from actions/checkout@v4 on 2026-07-04.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      # Pinned from actions/setup-go@v6 on 2026-07-04.
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: "1.26.4"
+      # Pinned from gitleaks/gitleaks@v8.28.0 on 2026-07-04.
+      - name: Install gitleaks
+        run: go install github.com/zricethezav/gitleaks/v8@39fdb480a06768cc41a84ef86959c07ff33091c4
+      - name: Run gitleaks
+        run: gitleaks detect --source . --redact --verbose
+
+  scorecard:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
+    name: AOS Kernel Supply Chain / scorecard
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      # Pinned from actions/checkout@v4 on 2026-07-04.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      # Pinned from ossf/scorecard-action@v2.4.0 on 2026-07-04.
+      - uses: ossf/scorecard-action@ff5dd8929f96a8a4dc67d13f32b8c75057829621
+        with:
+          repo_token: ${{ github.token }}
+          results_format: json
+          results_file: scorecard-results.json
+          publish_results: false

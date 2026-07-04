@@ -18,7 +18,7 @@
   "issuer": "RafineriaAI",
   "issuer_id": "rafineriaai-aos",
   "issuer_trust_status": "UNVERIFIED",
-  "manifest_sha256": "59f3e493bc0779f36da6daaa597fe4c78638c449b16f3b3d4f72b27bca46e8fa",
+  "manifest_sha256": "feeaf911ea7da7d90f82f909d90330023396d5f78472e5510ab6a33d3b77982a",
   "minimum_supported_aos_version": "0.1.0",
   "official_aos_output": false,
   "policy_hash": "3613d73ab24f3adfb5b57dd6c944d723e9832e8330a3487810de4a14bb118ec8",
@@ -29,7 +29,7 @@
   "schema_version": "aos-trusted-output/v0",
   "signature_status": "UNSIGNED_NOT_OFFICIAL",
   "source_commit": "bef7afc4fe5345b24cc396174240a76c10971c9d",
-  "trusted_output_sha256": "df9a7923950847c85e5144d19e9ae53377e72339c3f147decebed7ba3a4fa7c4",
+  "trusted_output_sha256": "00c67696d4b46e079e27a6bf7313c1d5efc7eaaf4584d34b888760f616d0eab7",
   "verdict": "WARN",
   "verdict_trust_notice": "Unsigned output. This is not an official RafineriaAI/AOS signed verdict. For source-record comparison, verify with --record."
 }

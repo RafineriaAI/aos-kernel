@@ -57,8 +57,12 @@ That gate currently executes:
 
 ```bash
 ruff check .
-mypy adapters aos_cli core tests tools
+mypy --no-sqlite-cache adapters aos_cli core tests tools
 pytest
+aos trust verify \
+  --input examples/reports/public-replay-trusted-output.json \
+  --record examples/reports/public-replay-record.jsonl \
+  --output .tmp/aos-trust-verification.json
 python tools/verify_public_integrity.py
 lake build AOSPublicCore
 ```

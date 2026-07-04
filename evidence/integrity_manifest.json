@@ -19,6 +19,14 @@
       "sha256": "aac92683c8494785ca7209df7afe111ade8d87f8e0f813af553ecf7f63229790"
     },
     {
+      "path": ".github/workflows/aos-kernel-codeql.yml",
+      "sha256": "3d61cdf78164d857218b268acc75621a8a5e9b6f7f09f5cb9e5871e49f601897"
+    },
+    {
+      "path": ".github/workflows/aos-kernel-supply-chain.yml",
+      "sha256": "63ea7935e7a3cfbb9f79cb4caeb9323d1bc17266dc5c4ddfa4362b303291eddd"
+    },
+    {
       "path": ".gitignore",
       "sha256": "faf1c3015f563de420ae3c7528a5268c473d143c3922673dafd9df652b0f0e3d"
     },
@@ -48,7 +56,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "effc8a3d4e6d37d56dabd5351138d79b106b408c912cfd1ba3eca826bdd463eb"
+      "sha256": "8dd3d73a153682eb46ed31af7f016a50eb62bcff8b232773076f2ded870eadc6"
     },
     {
       "path": "SCOPE_OF_PROOF.md",
@@ -56,7 +64,7 @@
     },
     {
       "path": "SECURITY.md",
-      "sha256": "bac1180853f5b2392af6e00fb3a442fc3f723d1644db0e62b34c06fea5ad80c7"
+      "sha256": "becd89f11c1cc9e64fa9485ee8baa2129cc888d94597f99c191f58b6d65d89a3"
     },
     {
       "path": "VERSION",
@@ -80,7 +88,7 @@
     },
     {
       "path": "aos_cli/cli.py",
-      "sha256": "e9e5ee320c86c3735e8d92e0c57f5ac70657d6423988ad79de065763d9f25e36"
+      "sha256": "aa51c04590b8e692dd51b52247287b45f17a309f5ac485f997017ce7b6a63c53"
     },
     {
       "path": "aos_cli/trusted_output.py",
@@ -104,7 +112,7 @@
     },
     {
       "path": "docs/FORMAL_CLAIMS_BOUNDARY.md",
-      "sha256": "b2918fa1744e957a248bd4e45ac8e962b986f715566a2451ceede9c25b0a39ce"
+      "sha256": "b568e8c6c16541bc7525fdce43ccb68880001dea13a2b8a493e2d52d210bc5a6"
     },
     {
       "path": "docs/MAINTENANCE_POLICY.md",
@@ -128,7 +136,7 @@
     },
     {
       "path": "docs/VALIDATION_GATES.md",
-      "sha256": "c059644ad9585a8f715cba5558542f63844cfdf385afe0fdbd3e414763201ea2"
+      "sha256": "9b8b4cfe3f4d576d5e5c79b99b336753181b223e79de5c3b905c57d7dc380ad1"
     },
     {
       "path": "docs/case-studies/public-repo-replay.md",
@@ -187,8 +195,16 @@
       "sha256": "6b28a47b7bd246a68f9bc52d85994041bae973bd0fbd7c2a897402586adc221c"
     },
     {
+      "path": "tests/test_cli_demo.py",
+      "sha256": "bb51fe9b41fd3278a70e367b73a7d25998c307ea8e55fed49b6f3ce821421d4c"
+    },
+    {
       "path": "tests/test_trusted_output.py",
-      "sha256": "4c5766de1f86b33f9fbe923f4548237b974e84746eb9df01f8f4e0efeee3ca24"
+      "sha256": "f004571812ab28779ca899e83056888edd138b6e15bb2caeb54fc67a5397802a"
+    },
+    {
+      "path": "tests/test_verdict_paths_agree.py",
+      "sha256": "4d3a4d66f81a829a9fbef80e4695dab8a01d79b33a3a760c6c72a9e27bb48201"
     },
     {
       "path": "tools/__init__.py",
@@ -196,15 +212,15 @@
     },
     {
       "path": "tools/audit_precheck.py",
-      "sha256": "1a7ba2383098103168ed65e2ffaf7f171e13fcb4e643dba25e3a3fbf24c1cc2a"
+      "sha256": "d8b706b0e3717a358c8f974609c542ffe61cd5fc8140846cb28670a24d21fc08"
     },
     {
       "path": "tools/run_validation_gate.py",
-      "sha256": "f92f1c3b7b5691108e801739ecbc6331df5c5ac142a78a2592cc4d7cf204bfaf"
+      "sha256": "ac7efa44a3f5e37be919f2be503b81f3f1ec42875db3a59f05240fa5db0f7560"
     },
     {
       "path": "tools/verify_public_integrity.py",
-      "sha256": "b98d74312978f0a36554f9399f92fef6263d0a37448f3eedbe4941ea96fff248"
+      "sha256": "1d825096938c7b2ca0e436a9a71426dfecee133fcba978db670047e08ffb548d"
     }
   ]
 }

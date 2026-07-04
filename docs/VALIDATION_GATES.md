@@ -11,8 +11,20 @@ Validation levels:
 | Mode | Purpose |
 | --- | --- |
 | `quick` | integrity + tests |
-| `standard` | ruff, mypy, tests, integrity, Lean build if available |
+| `standard` | ruff, mypy, tests, Trusted Output guard, integrity, Lean build if available |
 | `full` | same as standard for the curated public kernel |
+
+
+CI-only hardening workflows:
+
+| Workflow | Purpose |
+| --- | --- |
+| `aos-kernel-codeql.yml` | CodeQL analysis for Python source and workflow-triggered uploads |
+| `aos-kernel-supply-chain.yml` | actionlint, gitleaks, and OpenSSF Scorecard checks |
+
+These external checks are pinned at full commit SHA in GitHub Actions, with
+exact Go patch versions for Go-installed tools. They are not required as local
+developer dependencies for emergency kernel fixes.
 
 Release-surface audit precheck:
 

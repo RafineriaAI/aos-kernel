@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import uuid
 from pathlib import Path
 
 import pytest
@@ -60,9 +61,7 @@ def _rehash(output: dict[str, object]) -> dict[str, object]:
 
 
 def _test_dir(name: str) -> Path:
-    path = Path("tests/.tmp_trusted_output") / name
-    if path.exists():
-        shutil.rmtree(path)
+    path = Path("tests/.tmp_trusted_output") / f"{name}-{uuid.uuid4().hex}"
     path.mkdir(parents=True)
     return path
 
