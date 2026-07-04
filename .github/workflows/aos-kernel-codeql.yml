@@ -1,0 +1,30 @@
+name: AOS Kernel CodeQL
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: AOS Kernel CodeQL / analyze
+    runs-on: ubuntu-latest
+    steps:
+      # Pinned from actions/checkout@v4 on 2026-07-04.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      # Pinned from github/codeql-action@v3 on 2026-07-04.
+      - uses: github/codeql-action/init@e8e8e51caba890f74f97e228d00b0b81b666ee4c
+        with:
+          languages: python
+      # Pinned from github/codeql-action@v3 on 2026-07-04.
+      - uses: github/codeql-action/analyze@e8e8e51caba890f74f97e228d00b0b81b666ee4c
+        with:
+          category: "/language:python"

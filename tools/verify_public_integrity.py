@@ -1,13 +1,20 @@
 from __future__ import annotations
 
 import hashlib
-import json
 import subprocess
 import sys
 from pathlib import Path
+from typing import Final, cast
+
+from adapters.strict_json import StrictJsonLimits, load_json_object_path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = REPO_ROOT / "evidence" / "integrity_manifest.json"
+MANIFEST_LIMITS: Final = StrictJsonLimits(
+    max_bytes=2 * 1024 * 1024,
+    max_depth=32,
+    max_nodes=120_000,
+)
 
 
 def file_sha256(path: Path) -> str:
@@ -15,10 +22,7 @@ def file_sha256(path: Path) -> str:
 
 
 def load_manifest() -> dict[str, object]:
-    payload = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if not isinstance(payload, dict):
-        raise ValueError("integrity manifest must be a JSON object")
-    return payload
+    return cast(dict[str, object], load_json_object_path(MANIFEST, MANIFEST_LIMITS))
 
 
 def git_tracked_paths() -> list[str] | None:

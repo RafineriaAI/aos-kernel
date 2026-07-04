@@ -7,7 +7,9 @@ import subprocess
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Final, Sequence, cast
+
+from adapters.strict_json import StrictJsonLimits, load_json_object_path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_ROLE = "curated_public_kernel_release_surface"
@@ -17,6 +19,12 @@ EXPECTED_REMOTE_URLS = {
     "git@github.com:RafineriaAI/aos-kernel.git",
 }
 TRUSTED_OUTPUT_FIXTURE = "examples/reports/public-replay-trusted-output.json"
+WORKFLOW_DIR = REPO_ROOT / ".github" / "workflows"
+REQUIRED_WORKFLOWS = {
+    ".github/workflows/aos-kernel-ci.yml",
+    ".github/workflows/aos-kernel-codeql.yml",
+    ".github/workflows/aos-kernel-supply-chain.yml",
+}
 REQUIRED_CI_CHECK_CONTEXT = "AOS Kernel CI / validate"
 FULL_SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 SEMVER_RE = re.compile(
@@ -28,6 +36,8 @@ SEMVER_RE = re.compile(
     r"(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$"
 )
 USES_RE = re.compile(r"\buses:\s*([^\s#]+)")
+GO_INSTALL_RE = re.compile(r"\bgo\s+install\s+\S+@([^\s]+)")
+GO_VERSION_RE = re.compile(r'go-version:\s*["\']?([^"\'\n]+)')
 
 REQUIRED_DOCS = {
     "README.md",
@@ -105,6 +115,11 @@ FORBIDDEN_TRACKED_PREFIXES = (
 )
 FORBIDDEN_TRACKED_SUFFIXES = (".pyc", ".pyo", ".so", ".dll", ".exe")
 FORBIDDEN_PUBLIC_TEXT = ("trust status", "expected trust status")
+LOCAL_JSON_LIMITS: Final = StrictJsonLimits(
+    max_bytes=2 * 1024 * 1024,
+    max_depth=32,
+    max_nodes=120_000,
+)
 
 
 @dataclass(frozen=True)
@@ -165,10 +180,10 @@ def read_text(path: str) -> str:
 
 
 def read_json_object(path: str) -> dict[str, Any]:
-    payload = json.loads(read_text(path))
-    if not isinstance(payload, dict):
-        raise ValueError(f"{path} must be a JSON object")
-    return payload
+    return cast(
+        dict[str, Any],
+        load_json_object_path(REPO_ROOT / path, LOCAL_JSON_LIMITS),
+    )
 
 
 def parse_project_version(pyproject_text: str) -> str | None:
@@ -203,6 +218,12 @@ def tracked_text(path: str) -> str | None:
         return data.decode("utf-8")
     except UnicodeDecodeError:
         return None
+
+
+def workflow_paths() -> list[Path]:
+    if not WORKFLOW_DIR.is_dir():
+        return []
+    return sorted([*WORKFLOW_DIR.glob("*.yml"), *WORKFLOW_DIR.glob("*.yaml")])
 
 
 def workflow_action_refs(workflow_text: str) -> list[str]:
@@ -406,11 +427,14 @@ def check_lean_surface(findings: list[Finding]) -> None:
 
 
 def check_ci(findings: list[Finding]) -> None:
+    workflow_files = workflow_paths()
+    workflow_rel_paths = {
+        path.relative_to(REPO_ROOT).as_posix() for path in workflow_files
+    }
+    for required in sorted(REQUIRED_WORKFLOWS.difference(workflow_rel_paths)):
+        add(findings, "FAIL", "ci.workflow", f"required workflow missing: {required}")
+
     workflow = read_text(".github/workflows/aos-kernel-ci.yml").replace("\r\n", "\n")
-    if "permissions:\n  contents: read" not in workflow:
-        add(findings, "FAIL", "ci.permissions", "contents: read missing")
-    if "persist-credentials: false" not in workflow:
-        add(findings, "FAIL", "ci.checkout", "persist-credentials false missing")
     if "python tools/run_validation_gate.py --standard --skip-install" not in workflow:
         add(findings, "FAIL", "ci.standard-gate", "standard gate missing")
     if f"name: {REQUIRED_CI_CHECK_CONTEXT}" not in workflow:
@@ -420,15 +444,82 @@ def check_ci(findings: list[Finding]) -> None:
             "ci.required-check",
             f"required check context must be {REQUIRED_CI_CHECK_CONTEXT}",
         )
-    for trigger in ("pull_request_target", "workflow_run"):
-        if trigger in workflow:
-            add(findings, "FAIL", "ci.privileged-trigger", f"{trigger} not allowed")
-    if "self-hosted" in workflow:
-        add(findings, "FAIL", "ci.runner", "self-hosted runner not allowed")
-    if "secrets." in workflow:
-        add(findings, "WARN", "ci.secrets", "workflow references secrets")
-    for action_ref in unpinned_workflow_actions(workflow):
-        add(findings, "FAIL", "ci.action-pin", f"{action_ref} is not pinned")
+
+    for path in workflow_files:
+        relative = path.relative_to(REPO_ROOT).as_posix()
+        workflow_text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+        if "permissions:" not in workflow_text:
+            add(findings, "FAIL", "ci.permissions", f"{relative}: permissions missing")
+        if "contents: read" not in workflow_text:
+            add(
+                findings,
+                "FAIL",
+                "ci.permissions",
+                f"{relative}: contents: read missing",
+            )
+        checkout_without_credential_hardening = (
+            "actions/checkout@" in workflow_text
+            and "persist-credentials: false" not in workflow_text
+        )
+        if checkout_without_credential_hardening:
+            add(
+                findings,
+                "FAIL",
+                "ci.checkout",
+                f"{relative}: persist-credentials false missing",
+            )
+        for trigger in ("pull_request_target", "workflow_run"):
+            if trigger in workflow_text:
+                add(
+                    findings,
+                    "FAIL",
+                    "ci.privileged-trigger",
+                    f"{relative}: {trigger} not allowed",
+                )
+        if "self-hosted" in workflow_text:
+            add(
+                findings,
+                "FAIL",
+                "ci.runner",
+                f"{relative}: self-hosted runner not allowed",
+            )
+        if "secrets." in workflow_text:
+            add(
+                findings,
+                "WARN",
+                "ci.secrets",
+                f"{relative}: workflow references secrets",
+            )
+        for action_ref in unpinned_workflow_actions(workflow_text):
+            add(
+                findings,
+                "FAIL",
+                "ci.action-pin",
+                f"{relative}: {action_ref} is not pinned",
+            )
+        for install_ref in GO_INSTALL_RE.findall(workflow_text):
+            if FULL_SHA_RE.fullmatch(install_ref) is None:
+                add(
+                    findings,
+                    "FAIL",
+                    "ci.tool-pin",
+                    f"{relative}: go install ref {install_ref} is not pinned",
+                )
+        for go_version in GO_VERSION_RE.findall(workflow_text):
+            if go_version == "stable" or go_version.count(".") != 2:
+                add(
+                    findings,
+                    "FAIL",
+                    "ci.go-version",
+                    f"{relative}: go-version {go_version} is not an exact patch",
+                )
+        if "check-latest: true" in workflow_text:
+            add(
+                findings,
+                "FAIL",
+                "ci.go-version",
+                f"{relative}: check-latest true is not reproducible",
+            )
 
 
 def check_dependabot(findings: list[Finding]) -> None:

@@ -61,7 +61,7 @@ Expected output:
 AOS demo completed.
 Verdict: WARN
 Decision: REVIEW_REQUIRED
-Signals: 3
+Signals: 1
 Evidence: .tmp/aos-demo/check-record.jsonl
 Summary: .tmp/aos-demo/check-summary.md
 ```
