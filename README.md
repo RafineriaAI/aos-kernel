@@ -2,8 +2,10 @@
 
 Public demonstrator version: `0.1.1`
 
-AOS Kernel is a model-agnostic runtime assurance kernel. It converts bounded
+AOS Kernel is a model-agnostic decision-evidence kernel. It converts bounded
 signals into deterministic operational decisions with replayable evidence.
+Decision-time evidence is the current claim; runtime assurance is the
+direction, not a shipped capability.
 
 ```text
 signal -> policy -> PASS / WARN / BLOCK -> JSONL record -> SHA-256 hash
